@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Google Search</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+
+    <!-- Floating Clock Card -->
+    <div class="clock-card">
+      <div class="clock-time" id="clockTime">00:00:00</div>
+      <div class="clock-date" id="clockDate">Loading...</div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="topbar">
+      <span class="brand">✦  Aurora</span>
+      <button class="theme-toggle" onclick="toggleTheme()">☀️ Light Mode</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      <h1 class="logo">Google <span>Search</span></h1>
+      <p class="tagline">Your universe, one search away 🚀</p>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search anything..." />
+        <button onclick="doSearch()">Search</button>
+      </div>
+
+      <div class="shortcuts">
+  <a href="https://youtube.com" target="_blank">
+    <i class="fab fa-youtube"></i> YouTube
+  </a>
+  <a href="https://github.com" target="_blank">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+  <a href="https://wikipedia.org" target="_blank">
+    <i class="fab fa-wikipedia-w"></i> Wikipedia
+  </a>
+  <a href="https://maps.google.com" target="_blank">
+    <i class="fas fa-map-marker-alt"></i> Maps
+  </a>
+</div>
+
+    <script>
+      // Live clock
+      function updateTime() {
+        const now = new Date();
+        const timeEl = document.getElementById('clockTime');
+        const dateEl = document.getElementById('clockDate');
+        timeEl.textContent = now.toLocaleTimeString();
+        dateEl.textContent = now.toLocaleDateString('en-US', {
+          weekday: 'long', month: 'short', day: 'numeric'
+        });
+      }
+      setInterval(updateTime, 1000);
+      updateTime();
+
+      // Working search
+      function doSearch() {
+        const query = document.getElementById('searchInput').value;
+        if (query) {
+          window.open('https://www.google.com/search?q=' + query, '_blank');
+        }
+      }
+
+      // Enter key
+      document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') doSearch();
+      });
+
+      // Theme toggle
+      function toggleTheme() {
+        document.body.classList.toggle('light');
+        const btn = document.querySelector('.theme-toggle');
+        btn.textContent = document.body.classList.contains('light') ? '🌙 Dark Mode' : '☀️ Light Mode';
+      }
+    </script>
+
+  </body>
+</html>
