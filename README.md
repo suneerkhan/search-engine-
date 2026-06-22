@@ -1,9 +1,9 @@
-# 🔍 Suneer Search
+# 🔍 Google Search
 
-A lightweight, browser-based custom search engine powered by the **Google Custom Search JSON API**, built as part of a 10-day web development workshop.
+A lightweight, browser-based custom search engine powered by the **Google Custom Search JSON API**
 
 ---
-👉 [View Live on GitHub Pages]()
+👉 [View Live on GitHub Pages](https://suneerkhan.github.io/search-engine-/)
 
 ## 🚀 Features
 
@@ -36,11 +36,3 @@ suneer-search/
 └── README.md        # Project documentation
 ```
 
-
-
-
-
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
